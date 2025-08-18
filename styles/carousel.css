@@ -1,7 +1,21 @@
 /* Redondear esquinas del carrusel */
 #carouselExample .carousel-inner,
 #carouselExample .carousel-item img {
-    border-radius: 15px;
+    /*border-radius: 10px;*/
     height: auto;
-    overflow: hidden; /* evita que la imagen sobresalga de las esquinas */
+    overflow: hidden;
+    /* evita que la imagen sobresalga de las esquinas */
+}
+
+
+/* Estilos solo para pantallas pequeñas */
+@media (max-width: 576px) {
+    /* Redondear esquinas del carrusel */
+    #carouselExample .carousel-inner,
+    #carouselExample .carousel-item img {
+        /*border-radius: 10px;*/
+        height: 150px;
+        overflow: hidden;
+        /* evita que la imagen sobresalga de las esquinas */
+    }
 }
