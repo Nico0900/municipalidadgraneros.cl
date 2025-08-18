@@ -13,8 +13,8 @@
     /* Redondear esquinas del carrusel */
     #carouselExample .carousel-inner,
     #carouselExample .carousel-item img {
-        /*border-radius: 10px;*/
-        height: 150px;
+        /*border-radius: 10px;*//* 
+        height: 150px; */
         overflow: hidden;
         /* evita que la imagen sobresalga de las esquinas */
     }
