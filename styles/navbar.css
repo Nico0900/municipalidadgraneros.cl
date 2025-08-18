@@ -1,52 +1,78 @@
-.nav {
-    margin: 10px;
-}
-
 /* Estilos generales (desktop/tablet) */
 .nav-icons i {
-    font-size: 1.75rem; /* tamaño normal */
-    line-height: 0;  
+  font-size: 1.75rem;
+  /* tamaño normal */
+  line-height: 0;
 }
 
 /* Estilos para los botones de redes sociales */
 .nav-icons .nav-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;      /* redondo */
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-    overflow: hidden;        /* evita que cualquier línea aparezca */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  /* tamaño del botón */
+  height: 50px;
+  border-radius: 50%;
+  /* lo hace redondo */
+  color: white;
+  /* color del ícono */
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  /* sombra */
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.nav-menu {
+    padding-left: 30px;
+    font-size: 1.1rem;
+  }
+
+
 .nav-icons .nav-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Background según la red social */
-.nav-icons .fa-youtube { background: red; }
-.nav-icons .fa-facebook { background: #1877F2; }
-.nav-icons .fa-instagram { background: orangered; }
-.nav-icons .fa-whatsapp { background: #25D366; }
+.nav-icons .fa-youtube {
+  background: red;
+}
+
+.nav-icons .fa-facebook {
+  background: #1877F2;
+}
+
+.nav-icons .fa-instagram {
+  background: orangered;
+}
+
+.nav-icons .fa-whatsapp {
+  background: #25D366;
+}
 
 /* Estilos solo para pantallas pequeñas */
 @media (max-width: 576px) {
   .nav-icons {
     width: 100%;
-    justify-content: space-evenly; /* distribuye los íconos */
+    justify-content: space-evenly;
+    /* distribuye los íconos */
     margin-top: 10px;
   }
 
   .nav-icons i {
-    font-size: 2rem; /* más grandes en móvil */
+    font-size: 2rem;
+    /* más grandes en móvil */
   }
 
   .nav-icons .nav-link {
-    flex: 1; /* cada ícono ocupa el mismo espacio */
+    flex: 1;
+    /* cada ícono ocupa el mismo espacio */
     text-align: center;
+  }
+
+  .nav-menu {
+    padding-left: 30px;
+    font-size: 1.3rem;
   }
 }
