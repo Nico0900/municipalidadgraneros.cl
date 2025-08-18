@@ -5,7 +5,8 @@
 }
 
 .footer-logo {
-    max-width: 450px;
+    width: 450px;
+    max-width: 100%;
     height: auto;
 }
 
@@ -35,8 +36,8 @@
 
 /* Avatar */
 .avatar-img {
-    width: 90px;
-    height: 90px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--color-secundario);
@@ -86,16 +87,19 @@
     color: var(--color-gris);
 }
 
-body {
-    padding-bottom: 220px;
-    /* deja espacio según la altura del footer */
-}
-
-
 @media (max-width: 768px) {
     .footer img {
         display: block;
         margin: 0 auto;
         /* centra en móvil */
+    }
+
+    º.avatar-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--color-secundario);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     }
 }
