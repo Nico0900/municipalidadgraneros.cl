@@ -1,0 +1,46 @@
+:root {
+  /* Colores principales */
+  --color-primario: #0D5963;
+  --color-secundario: #AECD61;
+  --color-acento: #E26312;
+  --color-alerta: #CA3148;
+  --color-destacado: #E9B02D;
+  
+  /* Colores neutros */
+  --color-gris: #808080;
+  --color-celeste: #7ECCE1;
+}
+
+.sobre-nav{
+  background-color: var(--color-primario);
+  color: white;
+  text-align: center;
+}
+
+/* Estilos generales para los botones */
+.sobre-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.sobre-nav .nav-link i {
+    line-height: 1;
+    font-size: 1.2rem;
+}
+
+/* Efecto hover */
+.sobre-nav .nav-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+    opacity: 0.9; /* efecto leve de hover */
+    /*background-color: #01949d;*/
+}
+

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es" data-uw-w-loader=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="https://municipalidadgraneros.cl/uploads/logomun.png"> 
+  <title>Municipalidad de Graneros</title>
+  <link href="Municipalidad%20de%20Graneros_archivos/css2.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="Municipalidad%20de%20Graneros_archivos/all.min.css">
+  <link href="Municipalidad%20de%20Graneros_archivos/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Municipalidad%20de%20Graneros_archivos/swiper-bundle.min.css">
+  <link href="Municipalidad%20de%20Graneros_archivos/style.css" rel="stylesheet">
+  <style>
+/* ----- Carrusel banners GRANDE, imagen full ----- */
+.bannerSwiper,
+.bannerSwiper .swiper-wrapper,
+.bannerSwiper .swiper-slide {
+  height: 250px;      /* Altura estándar */
+  min-height: 160px;
+  max-height: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bannerSwiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100% !important;
+  /* Asegura que la imagen use todo el slide */
+  background: none;
+  box-shadow: 0 4px 32px #0001;
+  border-radius: 22px;
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+
+.bannerSwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+
+  object-position: center;
+  aspect-ratio: 16/5;
+  border-radius: 22px;
+  display: block;
+  box-shadow: none;
+  transition: filter 0.2s;
+}
+
+.bannerSwiper .swiper-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Flechas centradas y con fondo */
+.bannerSwiper .swiper-button-prev,
+.bannerSwiper .swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 2px 12px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  border: 2px solid #ededed;
+}
+
+.bannerSwiper .swiper-button-prev svg,
+.bannerSwiper .swiper-button-next svg {
+  width: 32px;
+  height: 32px;
+}
+
+.bannerSwiper .swiper-button-prev:after,
+.bannerSwiper .swiper-button-next:after {
+  display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .bannerSwiper, .bannerSwiper .swiper-wrapper, .bannerSwiper .swiper-slide {
+    height: 180px;
+    min-height: 110px;
+    max-height: 220px;
+  }
+  .bannerSwiper .swiper-slide img { border-radius: 14px; }
+}
+@media (max-width: 700px) {
+  .bannerSwiper, .bannerSwiper .swiper-wrapper, .bannerSwiper .swiper-slide {
+    height: 100px;
+    min-height: 68px;
+    max-height: 120px;
+  }
+  .bannerSwiper .swiper-slide img { border-radius: 9px; }
+  .bannerSwiper .swiper-button-prev,
+  .bannerSwiper .swiper-button-next {
+    width: 36px; height: 36px;
+  }
+  .bannerSwiper .swiper-button-prev svg,
+  .bannerSwiper .swiper-button-next svg {
+    width: 20px; height: 20px;
+  }
+}
+
+/* Opcional: transición hover suave en imagen */
+.bannerSwiper .swiper-slide img:hover {
+  filter: brightness(0.92) blur(0.5px);
+  transition: filter 0.2s;
+}
+
+.link-interes-card {
+  background: #fafbfc;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(50,80,100,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 90px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 2px solid #f6f6f6;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+.link-interes-card img {
+  max-height: 48px;
+  max-width: 170px;
+  object-fit: contain;
+  filter: grayscale(0%);
+}
+.link-interes-card:hover {
+  box-shadow: 0 6px 24px 0 rgba(50, 75, 100, 0.14);
+  transform: translateY(-4px) scale(1.02);
+  background: #e7f8fa;
+}
+@media (max-width: 991px) {
+  .link-interes-card {
+    width: 90vw;
+    max-width: 330px;
+    height: 80px;
+    margin: 0 auto;
+  }
+}
+.link-interes-imagen {
+  display: inline-block;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(50,80,100,0.07);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  width: 240px;       /* Ajusta al tamaño real del PNG */
+  height: 100px;      /* Ajusta al tamaño real del PNG */
+}
+.link-interes-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* o 'contain' si prefieres */
+  display: block;
+}
+.link-interes-imagen:hover {
+  box-shadow: 0 6px 24px 0 rgba(50, 75, 100, 0.14);
+  transform: translateY(-4px) scale(1.02);
+}
+
+
+
+  </style>
+<script type="module" src="Municipalidad%20de%20Graneros_archivos/widget.js"></script><link href="Municipalidad%20de%20Graneros_archivos/widget_lazy.css" type="text/css" rel="stylesheet"><link href="Municipalidad%20de%20Graneros_archivos/widget_base.css" type="text/css" rel="stylesheet"></head>
+<body>
+<div class="uwy userway_p6" data-uw-feature-ignore="true" data-uw-rm-ignore="true" style="background-color: transparent !important; overflow: initial !important;" title="Menú de Accesibilidad"><div class="userway_buttons_wrapper" style="left: 8px !important; top: calc(50% + 5px) !important;"><div class="ulsti hidden userway_dark" id="userwayLstIcon" aria-label="Menú de traducciones" role="button" tabindex="0" aria-haspopup="dialog" data-uw-s19-ignore="" title="Menú de traducciones" style="background: rgb(0, 72, 255) !important;"><span class="uiiw"></span><div class="ups"><img width="43" height="43" data-uw-rm-ignore="" class="si_w" aria-hidden="true" alt="Spinner: White decorative" src="Municipalidad%20de%20Graneros_archivos/spin_wh.svg"></div><span class="usr lst-spacer"></span><img class="userway_check_on" data-uw-rm-ignore="" data-uw-ignore-s25="true" width="18" height="20" alt="Accessibility menu is on" src="Municipalidad%20de%20Graneros_archivos/check_on.svg"></div><div class="uai userway_dark" id="userwayAccessibilityIcon" aria-label="Menú de Accesibilidad" role="button" tabindex="0" aria-haspopup="dialog" title="Menú de Accesibilidad" style="background: rgb(0, 72, 255) !important;"><span class="uiiw"><img data-uw-rm-ignore="" class="ui_w" role="presentation" alt="" src="Municipalidad%20de%20Graneros_archivos/body_wh.svg"></span><div class="ups"><img width="43" height="43" data-uw-rm-ignore="" class="si_w" aria-hidden="true" alt="Spinner: White decorative" src="Municipalidad%20de%20Graneros_archivos/spin_wh.svg"></div><span class="usr"></span><img class="userway_check_on" data-uw-rm-ignore="" data-uw-ignore-s25="true" width="18" height="20" alt="Accessibility menu is on" src="Municipalidad%20de%20Graneros_archivos/check_on.svg"></div><div class="uwaw-dictionary-tooltip"></div></div><iframe class="uwif userway_p6" data-uw-ignore-translate="true" name="userway" title="UserWay Menú de Accesibilidad" allow="clipboard-write" style="max-width: 100vw !important; visibility: visible !important; opacity: 1 !important; color-scheme: light !important;"></iframe></div><div class="uw-s10-bottom-ruler-guide"></div><div class="uw-s10-right-ruler-guide"></div><div class="uw-s10-left-ruler-guide"></div><div class="uw-s10-reading-guide"><div class="uw-s10-reading-guide__arrow"></div></div><div class="uw-s12-tooltip" aria-hidden="true"></div><audio id="introSound" src="Municipalidad%20de%20Graneros_archivos/loica.mp3"></audio>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const audio = document.getElementById("introSound");
+  audio.volume = 0.5;
+  // Intenta reproducir automáticamente
+  audio.play().catch(()=>{});
+});
+</script>
+
+
+  <!-- Top bar -->
+  <div class="top-bar d-flex justify-content-center bg-dark text-light py-1">
+    <a href="https://outlook.office.com/mail/" target="_blank" class="me-3"><i class="fa-solid fa-envelope"></i> Mail Institucional</a>
+    <a href="https://municipalidadgraneros.cl/intranet.php" class="me-3"><i class="fa-solid fa-network-wired"></i> Intranet</a>
+     <!--<a href="#" class="me-3"><i class="fa-solid fa-people-group"></i> Juntas de Vecinos</a>-->
+    <a href="https://www.portaltransparencia.cl/PortalPdT/web/guest/directorio-de-organismos-regulados?p_p_id=pdtorganismos_WAR_pdtorganismosportlet&amp;orgcode=f43f1d17f72036384669ba45ec911086" target="_blank" class="me-3"><i class="fa-solid fa-file-lines"></i> Solicitar Información</a>
+    <a href="https://www.portaltransparencia.cl/PortalPdT/directorio-de-organismos-regulados/?org=MU100" target="_blank" class="me-3"><i class="fa-solid fa-eye"></i> Transparencia Activa</a>
+    <a href="https://municipalidadgraneros.cl/pages/lobby.php" target="_blank"><i class="fa-solid fa-comments"></i> Audiencia Lobby</a>
+    <a href="https://municipalidadgraneros.cl/ley21146.php" target="_blank"><i class="fa-solid fa-comments"></i> Ley 21146</a>
+  </div>
+  
+  
+
+  <!-- Main header -->
+  <header class="main-header d-flex align-items-center justify-content-between px-4 py-3 shadow-sm">
+    <div class="logo">
+      <a href="https://municipalidadgraneros.cl/index.php">
+        <img src="Municipalidad%20de%20Graneros_archivos/logomun.png" alt="Logo Graneros" style="height:70px;">
+      </a>
+    </div>
+    <ul class="nav-desktop list-unstyled d-none d-md-flex mb-0">
+      <li class="mx-3"><a href="https://municipalidadgraneros.cl/index.php" class="underline">Inicio</a></li>
+      <li class="dropdown mx-3">
+        <button class="dropdown-btn">La Comuna</button>
+        <div class="dropdown-content">
+          <!-- <a href="pages/historia.php">Historia</a> -->
+          <a href="#">Autoridades</a>
+        </div>
+      </li>
+      <li class="dropdown mx-3">
+        <button class="dropdown-btn">Municipio</button>
+        <div class="dropdown-content">
+          <a href="https://municipalidadgraneros.cl/pages/Departamentos.php">Departamentos</a>
+          <a href="https://municipalidadgraneros.cl/pages/alcalde.php">Alcalde</a>
+          <a href="https://municipalidadgraneros.cl/pages/Concejales.php">Concejo Municipal</a>
+        </div>
+      </li>
+      <li class="mx-3"><a href="https://municipalidadgraneros.cl/news.php" class="underline">Noticias</a></li>
+      <li class="mx-3"><a href="#" class="underline">Trámites</a></li>
+    </ul>
+    <div class="controls d-none d-md-flex">
+      <a href="https://www.youtube.com/@MuniGranerosOficial" class="me-2"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.facebook.com/munigraneros/?locale=es_LA" class="me-2"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/munigraneros/?hl=es" class="me-2"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://whatsapp.com/channel/0029VazSREqHwXb4LrelIc2I" class="me-2"><i class="fa-brands fa-whatsapp"></i></a>
+  <!--       <a href="#"><i class="fa-brands fa-youtube"></i></a>-->
+    </div>
+    <!-- Mobile hamburger -->
+    <button class="hamburger d-md-none"><i class="fa-solid fa-bars"></i></button>
+  </header>
+
+  <!-- Off-canvas mobile menu -->
+  <div class="mobile-menu-overlay"></div>
+  <div class="mobile-menu-panel">
+    <div class="close-btn"><i class="fa-solid fa-times"></i></div>
+    <nav>
+      <ul class="list-unstyled">
+        <li><a href="https://municipalidadgraneros.cl/index.php">Inicio</a></li>
+        <li>
+          <button class="dropdown-btn-mobile">La Comuna</button>
+          <ul class="submenu-mobile list-unstyled ps-3">
+           <!--  <li><a href="pages/historia.php">Historia</a></li> -->
+            <li><a href="#">Autoridades</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="dropdown-btn-mobile">Municipio</button>
+          <ul class="submenu-mobile list-unstyled ps-3">
+            <li><a href="https://municipalidadgraneros.cl/pages/Departamentos.php">Departamentos</a></li>
+            <li><a href="https://municipalidadgraneros.cl/pages/alcalde.php">Alcalde</a></li>
+            <li><a href="https://municipalidadgraneros.cl/pages/Concejales.php">Concejo Municipal</a></li>
+          </ul>
+        </li>
+        <li><a href="https://municipalidadgraneros.cl/news.php">Noticias</a></li>
+        <li><a href="#">Trámites</a></li>
+      </ul>
+    </nav>
+    <hr>
+    <div class="social-mobile">
+      <a href="https://www.youtube.com/@MuniGranerosOficial" class="me-2"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.facebook.com/munigraneros/?locale=es_LA" class="me-2"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/munigraneros/?hl=es" class="me-2"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://whatsapp.com/channel/0029VazSREqHwXb4LrelIc2I" class="me-2"><i class="fa-brands fa-whatsapp"></i></a>
+     <!-- <a href="#" class="me-2"><i class="fa-brands fa-twitter"></i></a> -->
+     <!-- <a href="#"><i class="fa-brands fa-youtube"></i></a> -->
+    </div>
+  </div>
+
+<section class="hero-carousel">
+  <div id="mainCarousel" class="carousel slide pointer-event" data-bs-ride="carousel" data-bs-interval="6000">
+    <div class="carousel-inner">
+            <div class="carousel-item active">
+                  <img src="Municipalidad%20de%20Graneros_archivos/1748956039_3d8c_banner-web.gif" class="carousel-img d-block w-100" alt="Slide 1">
+              </div>
+          </div>
+      </div>
+</section>
+<script src="Municipalidad%20de%20Graneros_archivos/bootstrap.bundle.min.js"></script>
+
+
+<div style="width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; z-index:2;">
+  <img src="Municipalidad%20de%20Graneros_archivos/franja-inferior.png" alt="Franja de colores" style="width:100%; height:auto; display:block;">
+</div>
+
+  <main id="contenidos" class="container py-4 flex-grow-1">
+    
+
+<div class="modal fade" id="welcomeModal" tabindex="-1" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 370px;">
+   <div class="modal-content p-0 border-0 popup-imgflyer"> 
+	
+	  <img src="Municipalidad%20de%20Graneros_archivos/1750102092_numeros%20de%20emergencia.jpg" class="popup-imgflyer-img" alt="Popup Flyer"> </div> 
+  </div>
+</div>
+<!-- Carrusel de banners moderno (Swiper) -->
+<div class="row gx-5 align-items-start mb-2">
+  <div class="col-lg-8 mb-4">
+    <div id="banner-carrusel">
+  <div class="swiper bannerSwiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-4320px, 0px, 0px); transition-delay: 0ms;" id="swiper-wrapper-3f3c59fe82e74ff0" aria-live="off">
+              
+              
+              
+              
+              <!-- ACA VAN LOS BANNERS DEL SLIDER -->
+              
+          <div class="swiper-slide swiper-slide-next" style="width: 864px;" role="group" aria-label="2 / 6" data-swiper-slide-index="1">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdeKE66ZGICCiHazzNOkjJML5fQPODVNlJaGI0X84uXvtLo6w/viewform" target="_blank" rel="noopener">
+            <img src="Municipalidad%20de%20Graneros_archivos/1748536277_banners.jpg" alt="Banner">
+          </a>
+        </div><div class="swiper-slide" style="width: 864px;" role="group" aria-label="3 / 6" data-swiper-slide-index="2">
+          <a href="https://forms.gle/QSFzRkR6f2HSd8Fi8" target="_blank" rel="noopener">
+            <img src="Municipalidad%20de%20Graneros_archivos/1749646284_solicitud%20retiro%20de%20escombros-02.png" alt="Banner">
+          </a>
+        </div><div class="swiper-slide" style="width: 864px;" role="group" aria-label="4 / 6" data-swiper-slide-index="3">
+          <a href="https://www.municipalidadgraneros.cl/" target="_blank" rel="noopener">
+            <img src="Municipalidad%20de%20Graneros_archivos/1749763468_banner%2520emergencia(1)_002.jpg" alt="Banner">
+          </a>
+        </div><div class="swiper-slide" style="width: 864px;" role="group" aria-label="5 / 6" data-swiper-slide-index="4">
+          <a href="https://www.nestle.cl/media/pressreleases/allpressreleases/fondo-desarrollo-local-henri" target="_blank" rel="noopener">
+            <img src="Municipalidad%20de%20Graneros_archivos/1750684236_fondo%20de%20desarrollo%20local.jpg" alt="Banner">
+          </a>
+        </div><div class="swiper-slide swiper-slide-prev" style="width: 864px;" role="group" aria-label="6 / 6" data-swiper-slide-index="5">
+          <a href="https://forms.gle/2rszLu6QsEL9MRfp8" target="_blank" rel="noopener">
+            <img src="Municipalidad%20de%20Graneros_archivos/1750871310_dia%20del%20arbol%202025.png" alt="Banner">
+          </a>
+        </div><div class="swiper-slide swiper-slide-active" style="width: 864px;" role="group" aria-label="1 / 6" data-swiper-slide-index="0">
+          <a href="https://postulaciones.carabineros.cl/" target="_blank" rel="noopener">
+            <img src="Municipalidad%20de%20Graneros_archivos/1747873028_carabineros.jpeg" alt="Banner">
+          </a>
+        </div></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </div>
+  <section id="news" class="mb-5">
+    <div class="d-flex justify-content-between align-items-end mb-3 flex-wrap">
+      <img src="Municipalidad%20de%20Graneros_archivos/ginforma.png" alt="Graneros Informa" class="titulo-informa-img mb-0" draggable="false">
+
+      <a href="https://municipalidadgraneros.cl/news.php" class="btn btn-ver-todo">
+  Ver todas <i class="fa-solid fa-arrow-right ms-1"></i>
+</a>
+
+    </div>
+    <div class="row g-4">
+              <div class="col-12 col-sm-6 col-xl-4 d-flex">
+          <a href="https://municipalidadgraneros.cl/news-single.php?id=15" class="news-link card flex-fill news-card h-100 border-0 text-decoration-none text-body" style="cursor: pointer;">
+                          <img src="Municipalidad%20de%20Graneros_archivos/1748969079_Cogrid%20intercomunal%203.jpg" class="card-img-top news-thumb" alt="Graneros refuerza trabajo intercomunal para prevenir emergencias por inundaciones">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Graneros refuerza trabajo intercomunal para prevenir emergencias por inundaciones</h5>
+              <p class="card-text flex-grow-1">
+                El Alcalde Marcelo Miñañir participó en el COGRID Intercomunal desarrollado en Codegua, …              </p>
+              <time datetime="2025-06-30" class="mt-auto text-muted small">
+                30 Jun, 2025              </time>
+            </div>
+          </a>
+        </div>
+              <div class="col-12 col-sm-6 col-xl-4 d-flex">
+          <a href="https://municipalidadgraneros.cl/news-single.php?id=16" class="news-link card flex-fill news-card h-100 border-0 text-decoration-none text-body" style="cursor: pointer;">
+                          <img src="Municipalidad%20de%20Graneros_archivos/1748969153_FIRMA%20INJUV.JPG" class="card-img-top news-thumb" alt="Graneros firma convenio con INJUV para fortalecer la participación juvenil.">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Graneros firma convenio con INJUV para fortalecer la participación juvenil.</h5>
+              <p class="card-text flex-grow-1">
+                La comuna fue seleccionada para ejecutar la segunda 
+versión del Programa Compromiso Joven, una iniciat…              </p>
+              <time datetime="2025-06-03" class="mt-auto text-muted small">
+                3 Jun, 2025              </time>
+            </div>
+          </a>
+        </div>
+              <div class="col-12 col-sm-6 col-xl-4 d-flex">
+          <a href="https://municipalidadgraneros.cl/news-single.php?id=17" class="news-link card flex-fill news-card h-100 border-0 text-decoration-none text-body" style="cursor: pointer;">
+                          <img src="Municipalidad%20de%20Graneros_archivos/1748969283_1%20Trenes.JPG" class="card-img-top news-thumb" alt="Graneros vivió una histórica fiesta cultural con más de 10 mil personas en el Parque Alberto Hurtado gracias a Trenes Culturales">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Graneros vivió una histórica fiesta cultural con más de 10 mil personas en el Parque Alberto Hurtado gracias a Trenes Culturales</h5>
+              <p class="card-text flex-grow-1">
+                Graneros fue escenario de una inolvidable jornada 
+cultural con la llegada de Trenes Culturales, programa del …            
+  </p>
+              <time datetime="2025-06-03" class="mt-auto text-muted small">
+                3 Jun, 2025              </time>
+            </div>
+          </a>
+        </div>
+          </div>
+    </section>
+
+    <!-- Redes Sociales -->
+<div class="card mb-4 border-0 shadow-sm" style="background: #fafbfc">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap">
+      <h3 class="mb-0 fw-bold" style="color: #167a7a;">
+        <i class="fa-solid fa-share-nodes me-2" style="color:#20b2aa"></i> Redes Sociales
+      </h3>
+      <div class="d-flex gap-2">
+        <a href="https://www.youtube.com/@MuniGranerosOficial" target="_blank" class="btn btn-sm btn-light rounded-circle shadow-sm" style="color: #ff0000;">
+          <i class="fab fa-youtube fa-lg"></i>
+        </a>
+        <a href="https://www.facebook.com/munigraneros" target="_blank" class="btn btn-sm btn-light rounded-circle shadow-sm" style="color: #1877f2;">
+          <i class="fab fa-facebook-f fa-lg"></i>
+        </a>
+        <a href="https://www.instagram.com/munigraneros" target="_blank" class="btn btn-sm btn-light rounded-circle shadow-sm" style="color:rgb(242, 140, 24);">
+          <i class="fa-brands fa-instagram fa-lg"></i>
+        </a>
+        <a href="https://whatsapp.com/channel/0029VazSREqHwXb4LrelIc2I" target="_blank" class="btn btn-sm btn-light rounded-circle shadow-sm" style="color:rgb(2, 148, 14);">
+          <i class="fa-brands fa-whatsapp fa-lg"></i>
+        </a>
+      </div>
+    </div>
+    <!-- RRSS GRID -->
+    <div class="row g-4 mb-2">
+      <!-- Primera fila: Instagram y Facebook -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm rrss-card">
+          <div class="card-header text-center bg-white border-0 pb-1 pt-3">
+            <i class="fab fa-instagram me-2" style="color:#E4405F;"></i>
+            <span class="fw-semibold" style="color:#222">Instagram</span>
+          </div>
+          <div class="card-body pt-2 pb-1 d-flex flex-column">
+            <div class="instagram-widget mb-2 flex-grow-1 d-flex align-items-center justify-content-center" style="min-width:320px">
+              <behold-widget feed-id="3QR7deUY33r1kGLF2rTo"></behold-widget>
+            </div>
+            <div class="text-center mt-auto">
+              <a href="https://www.instagram.com/munigraneros/" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill px-4 fw-semibold" style="border-color:#E4405F; color:#E4405F;">
+                Ver en Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-header text-center bg-white border-0 pb-1 pt-3">
+            <i class="fab fa-facebook-f me-2" style="color:#1877f2"></i>
+            <span class="fw-semibold" style="color:#222">Facebook</span>
+          </div>
+          <div class="card-body pt-2 pb-1">
+            <div class="ratio ratio-1x1 rounded overflow-hidden mb-2" style="min-height: 310px; background:#f6f7fa">
+              <iframe src="Municipalidad%20de%20Graneros_archivos/page.htm" width="100%" height="320" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+              </iframe>
+            </div>
+            <div class="text-center">
+              <a href="https://www.facebook.com/munigraneros" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-semibold">
+                Ver en Facebook
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Segunda fila: YouTube y WhatsApp -->
+             <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-header text-center bg-white border-0 pb-1 pt-3">
+            <i class="fab fa-youtube me-2" style="color: #ff0000;"></i>
+            <span class="fw-semibold" style="color:#222">YouTube</span>
+          </div>
+          <div class="card-body pt-2 pb-1">
+                          <div class="ratio ratio-16x9 rounded mb-2">
+                <iframe src="Municipalidad%20de%20Graneros_archivos/loXIBUkTsBw.htm" title="Último video YouTube" allowfullscreen="" style="border-radius:10px;width:100%;height:100%;">
+                </iframe>
+              </div>
+                        <div class="text-center">
+              <a href="https://www.youtube.com/@MuniGranerosOficial" target="_blank" class="btn btn-outline-danger btn-sm rounded-pill px-4 fw-semibold">
+                Ver canal en YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- WhatsApp -->
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm rrss-card">
+          <div class="card-header text-center bg-white border-0 pb-1 pt-3">
+            <i class="fab fa-whatsapp me-2" style="color:#25D366;"></i>
+            <span class="fw-semibold" style="color:#222">WhatsApp</span>
+          </div>
+          <div class="card-body pt-2 pb-1 d-flex flex-column justify-content-center align-items-center">
+            <div class="mb-3">
+              <i class="fab fa-whatsapp fa-3x" style="color:#25D366;"></i>
+            </div>
+            <p class="text-center text-muted mb-4 px-2" style="font-size:1.02rem;">
+              Únete a nuestro canal oficial y recibe <strong>noticias</strong> y <strong>alertas</strong> directo en tu WhatsApp.
+            </p>
+            <a href="https://www.whatsapp.com/channel/0029VazSREqHwXb4LrelIc2I" target="_blank" class="btn btn-outline-success btn-sm rounded-pill px-4 fw-semibold" style="border-color:#25D366; color:#25D366;">
+              Unirse al canal
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Instagram widget script -->
+    <script>
+      (() => {
+        const d=document,s=d.createElement("script");s.type="module";
+        s.src="https://w.behold.so/widget.js";d.head.append(s);
+      })();
+    </script>
+  </div>
+</div>
+<!-- Apartado de Links de Interés
+      <h3 class="mb-0 fw-bold" style="color: #167a7a;">
+        <i class="fa-solid fa-share-nodes me-2" style="color:#20b2aa"></i> Redes Sociales
+      </h3> 
+-->
+<section class="container my-4">
+  <div class="bg-white rounded-4 shadow-sm p-4" style="border: 2px solid #f6f6f6;">
+    <h3 class="mb-4" style="font-family: 'Montserrat', sans-serif; font-weight: 700; color:#20b2aa;">Links de Interés</h3>
+    <div class="row gx-4 gy-3 justify-content-center">
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-3">
+        <a href="https://www.chileatiende.gob.cl/" target="_blank" class="link-interes-imagen">
+          <img src="Municipalidad%20de%20Graneros_archivos/chileatiende.png" alt="Chile Atiende">
+        </a>
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-3">
+        <a href="https://www.registrocivil.cl/" target="_blank" class="link-interes-imagen">
+          <img src="Municipalidad%20de%20Graneros_archivos/registrocivil.png" alt="Registro Civil">
+        </a>
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-3">
+<a href="https://www.empleospublicos.cl/" target="_blank" class="link-interes-imagen">
+  <img src="Municipalidad%20de%20Graneros_archivos/empleospublicos.png" alt="Empleos Públicos">
+</a>
+
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-3">
+        <a href="https://sence.gob.cl/" target="_blank" class="link-interes-imagen">
+          <img src="Municipalidad%20de%20Graneros_archivos/sence.png" alt="Sence">
+        </a>
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-3">
+        <a href="https://www.ventanillaunicasocial.gob.cl/" target="_blank" class="link-interes-imagen">
+          <img src="Municipalidad%20de%20Graneros_archivos/ventanillaunica.png" alt="Ventanilla Única Social">
+        </a>
+      </div>
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-3">
+        <a href="https://www.bne.cl/" target="_blank" class="link-interes-imagen">
+          <img src="Municipalidad%20de%20Graneros_archivos/bne.png" alt="BNE">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  </div>
+
+  <!-- Derecha: Servicios y Trámites -->
+  <!-- Derecha: Servicios y Trámites -->
+<div class="col-lg-4 mb-4">
+
+  <!-- CALENDARIO GOOGLE ARRIBA -->
+  <div class="mb-3 text-center">
+    <h5 style="font-weight:600; margin-bottom:12px;">Calendario de Actividades</h5>
+    <iframe src="" style="border:solid 1px #777; border-radius:12px; width:100%; max-width:350px;" width="100%" height="300" frameborder="0" scrolling="no">
+    </iframe>
+  </div>
+<a href="https://documentos.municipalidadgraneros.cl/" target="_blank" rel="noopener">
+  <img src="Municipalidad%20de%20Graneros_archivos/pdigital.png" alt="Graneros Informa" class="titulo-informa-img mb-0" draggable="false">
+</a>
+
+
+  <div class="servicios-menu shadow-sm">
+    <div class="servicios-header">
+      <i class="fa-solid fa-clipboard-list"></i>
+      Servicios
+    </div>
+    <div class="servicios-links">
+     <!-- <a href="https://www.oirsdigital.municipalidadgraneros.cl/" class="serv-link blanco" target="_blank">
+        <i class="fa-solid fa-people-group"></i></i> OIRS Digital
+      </a>-->
+      <a href="https://www.sem2.gob.cl/tramites/permisos-de-circulacion/69080300/buscar" class="serv-link blanco" target="_blank">
+        <i class="fa-solid fa-car-side"></i> Permiso de Circulación
+      </a>
+      <a href="https://www.cultura.gob.cl/eventos-actividades/trenes-culturales-llega-a-graneros-con-inti-illimani-historico-zumbale-primo-y-sinergia-kids/" class="serv-link blanco" target="_blank">
+        <i class="fa-solid fa-train"></i> Trenes Culturales
+      </a>
+      <a href="https://www.municipalidadgraneros.cl/archivos/modal/Cuenta%20Publica.pdf" class="serv-link blanco" target="_blank">
+        <i class="fa-solid fa-book-open"></i> Libro Cuenta Publica 2024
+      </a>
+    </div>
+        <div class="servicios-banners">
+              <a href="https://postulaciones.carabineros.cl/" target="_blank" rel="noopener" class="banner-link">
+          <img src="Municipalidad%20de%20Graneros_archivos/1747873028_carabineros_002.jpeg" alt="Banner" class="img-fluid banner-img" onerror="this.src='/css/default-banner.png'">
+        </a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdeKE66ZGICCiHazzNOkjJML5fQPODVNlJaGI0X84uXvtLo6w/viewform" target="_blank" rel="noopener" class="banner-link">
+          <img src="Municipalidad%20de%20Graneros_archivos/1748536277_banners_002.jpg" alt="Banner" class="img-fluid banner-img" onerror="this.src='/css/default-banner.png'">
+        </a>
+              <a href="https://forms.gle/QSFzRkR6f2HSd8Fi8" target="_blank" rel="noopener" class="banner-link">
+          <img src="Municipalidad%20de%20Graneros_archivos/1749646284_solicitud%2520retiro%2520de%2520escombros-02_002.png" alt="Banner" class="img-fluid banner-img" onerror="this.src='/css/default-banner.png'">
+        </a>
+              <a href="https://www.municipalidadgraneros.cl/" target="_blank" rel="noopener" class="banner-link">
+          <img src="Municipalidad%20de%20Graneros_archivos/1749763468_banner%20emergencia(1).jpg" alt="Banner" class="img-fluid banner-img" onerror="this.src='/css/default-banner.png'">
+        </a>
+              <a href="https://www.nestle.cl/media/pressreleases/allpressreleases/fondo-desarrollo-local-henri" target="_blank" rel="noopener" class="banner-link">
+          <img src="Municipalidad%20de%20Graneros_archivos/1750684236_fondo%2520de%2520desarrollo%2520local_002.jpg" alt="Banner" class="img-fluid banner-img" onerror="this.src='/css/default-banner.png'">
+        </a>
+              <a href="https://forms.gle/2rszLu6QsEL9MRfp8" target="_blank" rel="noopener" class="banner-link">
+          <img src="Municipalidad%20de%20Graneros_archivos/1750871310_dia%2520del%2520arbol%25202025_002.png" alt="Banner" class="img-fluid banner-img" onerror="this.src='/css/default-banner.png'">
+        </a>
+          </div>
+      </div>
+</div>
+
+
+
+  
+
+</div></main>
+
+
+  <!-- Site Footer -->
+<footer class="site-footer bg-dark text-light pt-5">
+  <div class="footer-widgets container d-flex justify-content-between py-4">
+      <div class="widget">
+        <h4>Municipalidad de Graneros</h4>
+        <p>
+          Guillermo Berrios 50, Graneros, Chile<br>
+          Teléfono: +56 9<br>
+          Email: alcaldia@municipalidadgraneros.cl
+        </p>
+      </div>
+      <div class="widget">
+        <h4>Enlaces Rápidos</h4>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light">Inicio</a></li>
+          <li><a href="#" class="text-light">Servicios</a></li>
+          <li><a href="#" class="text-light">Transparencia</a></li>
+          <li><a href="#" class="text-light">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h4>Síguenos</h4>
+        <div class="social-footer">
+          <a href="https://www.youtube.com/@MuniGranerosOficial" class="me-2 text-light"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/munigraneros/?locale=es_LA" class="me-2 text-light"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/munigraneros/?hl=es" class="me-2 text-light"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://whatsapp.com/channel/0029VazSREqHwXb4LrelIc2I" class="me-2"><i class="fa-brands fa-whatsapp"></i></a>
+      <!--    <a href="#" class="me-2 text-light"><i class="<i class="fab fa-youtube fa-lg"></i>"></i></a> -->
+      <!--    <a href="#" class="text-light"><i class="fa-brands fa-youtube"></i></a> -->
+        </div>
+      </div>
+    </div>
+  <div class="footer-bottom text-center py-3">
+      © 2025 Municipalidad de Graneros. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS + Modal auto-show + News Modal JS + Script.js -->
+
+  <script>// JS para submenú animado (ejemplo):
+document.querySelectorAll('.dropdown-btn-mobile').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const parentLi = this.closest('li');
+    parentLi.classList.toggle('open');
+    const expanded = parentLi.classList.contains('open');
+    this.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    // Cierra otros submenús si quieres solo uno abierto a la vez:
+    document.querySelectorAll('.dropdown-btn-mobile').forEach(other => {
+      if (other !== this) {
+        other.closest('li').classList.remove('open');
+        other.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+});
+</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new bootstrap.Modal(document.getElementById('welcomeModal')).show();
+    });
+  </script>
+    <script>
+    document.querySelectorAll('.news-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', async () => {
+        const id = card.dataset.id;
+        try {
+          const res = await fetch(`/news-detail.php?id=${id}`);
+          const data = await res.json();
+          const img = document.getElementById('newsModalImg');
+          if (data.imagen) {
+            img.src = `/uploads/noticias/${encodeURIComponent(data.imagen)}`;
+            img.style.display = '';
+          } else {
+            img.style.display = 'none';
+          }
+          document.getElementById('newsModalTitle').textContent  = data.titulo;
+          document.getElementById('newsModalContent').textContent = data.contenido;
+          document.getElementById('newsModalDate').textContent    = data.fecha;
+          new bootstrap.Modal(document.getElementById('newsModal')).show();
+        } catch (e) {
+          console.error(e);
+        }
+      });
+    });
+  </script>
+  <script src="Municipalidad%20de%20Graneros_archivos/script.js"></script>
+
+<!-- Swiper JS -->
+<script src="Municipalidad%20de%20Graneros_archivos/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  new Swiper('.bannerSwiper', {
+    slidesPerView: 1,           // SIEMPRE 1 SLIDE VISIBLE
+    centeredSlides: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    }
+    // NADA DE BREAKPOINTS AQUÍ
+  });
+});
+</script>
+
+
+<script src="Municipalidad%20de%20Graneros_archivos/widget_002.js" data-account="9ibHBsxv9y"></script>
+
+
+
+<script src="Municipalidad%20de%20Graneros_archivos/widget_app_1751358735887.js" async="" id="a11yWidgetSrc" crossorigin="anonymous" integrity="sha256-Xt3suTU1NDM61Lyg1rey+QDBdjiNTqqD1NhYNf91c2Y="></script><script crossorigin="anonymous" integrity="sha256-/VYKx6h5m5R8SDlsJGDNG4ZAvjVC9Nnsv/R14PRAl/s=" src="Municipalidad%20de%20Graneros_archivos/remediation_1751358735887.js"></script></body></html>

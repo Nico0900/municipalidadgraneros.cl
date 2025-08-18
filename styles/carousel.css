@@ -1,0 +1,7 @@
+/* Redondear esquinas del carrusel */
+#carouselExample .carousel-inner,
+#carouselExample .carousel-item img {
+    border-radius: 15px;
+    height: auto;
+    overflow: hidden; /* evita que la imagen sobresalga de las esquinas */
+}
